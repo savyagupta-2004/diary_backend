@@ -27,7 +27,7 @@ router.post(
   ],
   async (req, res) => {
     try {
-      const { title, description, tag } = req.body;
+      const { title, description } = req.body;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
@@ -36,7 +36,6 @@ router.post(
       const diary = new Diary({
         title,
         description,
-        tag,
         user: req.user.id,
       });
       const savedDiary = await diary.save();

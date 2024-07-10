@@ -13,11 +13,7 @@ const DiarySchema = new Schema({
     type: String,
     required: true,
   },
-  tag: {
-    type: String,
-    required: true,
-    default: "General",
-  },
+
   date: {
     type: Date,
     default: Date.now,
