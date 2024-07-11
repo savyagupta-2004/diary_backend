@@ -10,8 +10,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/", require("./Routes/auth"));
-app.use("/", require("./Routes/diary"));
+app.use("/api/auth/", require("./Routes/auth"));
+app.use("/api/diary/", require("./Routes/diary"));
 
 app.listen(port, () => {
   console.log(
